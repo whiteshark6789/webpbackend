@@ -8,7 +8,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ["customer", "manager"],
     required: true
-  }
+  },
+  phone: { type: String, default: "" },
+  address: { type: String, default: "" }
 });
 
 module.exports = mongoose.model("User", userSchema);
