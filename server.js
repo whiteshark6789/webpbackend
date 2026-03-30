@@ -22,6 +22,10 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../frontend")));
 
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok", message: "Server is responsive" });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
